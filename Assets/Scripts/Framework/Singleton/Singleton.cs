@@ -5,9 +5,9 @@ using System.Reflection;
     单例类的公共父类
 */
 
-namespace GloryOfDead
+namespace LightingTheDungeon
 {
-    public class Singleton<T> where T : Singleton<T>
+    public class Singleton<T> where T : new()
     {
         private static T mInstance;
 
@@ -18,20 +18,11 @@ namespace GloryOfDead
             {
                 if (mInstance == null)
                 {
-                    // 通过反射获取构造函数列表
-                    var ctors = typeof(T).GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic);
-
-                    // 获取无参、非public构造函数
-                    var ctor = Array.Find(ctors, c => c.GetParameters().Length == 0);
-
-                    // 获取不到该构造函数，抛出异常
-                    if (ctor == null)
+                    if (mInstance == null)
                     {
-                        throw new System.Exception("Non-public ctor() not found!");
+                        mInstance = new T();
                     }
-
-                    // 通过构造函数创建实例
-                    mInstance = ctor.Invoke(null) as T;
+                    return mInstance;
                 }
                 return mInstance;
             }

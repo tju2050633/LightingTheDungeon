@@ -4,7 +4,7 @@ using UnityEngine;
     吸血鬼类
 */
 
-namespace GloryOfDead
+namespace LightingTheDungeon
 {
     public class Vampire : MonoBehaviour
     {

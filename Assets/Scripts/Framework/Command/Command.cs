@@ -2,7 +2,7 @@
     命令类的接口
 */
 
-namespace GloryOfDead
+namespace LightingTheDungeon
 {
     public interface ICommand
     {

@@ -1,4 +1,4 @@
-namespace GloryOfDead
+namespace LightingTheDungeon
 {
     public struct ContinueCommand : ICommand
     {

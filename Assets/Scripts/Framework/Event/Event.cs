@@ -5,7 +5,7 @@ using System;
     事件类的公共父类
 */
 
-namespace GloryOfDead
+namespace LightingTheDungeon
 {
     public class Event<T> where T : Event<T>
     {
